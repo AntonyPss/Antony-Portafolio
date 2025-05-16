@@ -17,7 +17,7 @@ Este portafolio está construido con:
 🔹 **Weather API** – Aplicación interactiva que muestra datos meteorológicos en tiempo real.  
 
 ## 🚀 Cómo explorar
-Puedes visitar mi portafolio en [https://antony-portafolio.vercel.app/].  
+Puedes visitar mi portafolio en [Vercel](https://antony-portafolio.vercel.app/).  
 Si quieres contribuir o revisar el código, puedes encontrarlo en [GitHub u otra plataforma].
 
 ## 📞 Contacto
