@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Portafolio - Antony Calvo | Desarrollador Web</title>
 	<meta name="description"
 		content="Portafolio profesional de Antony Calvo, desarrollador web especializado en JavaScript, HTML y CSS.">
@@ -15,300 +16,118 @@
 	<meta property="og:url" content="https://antony-portafolio.vercel.app/">
 	<meta name="twitter:card" content="summary_large_image">
 
-	<!-- Preloads -->
-	<link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'">
-	<noscript>
-		<link rel="stylesheet" href="css/style.css">
-	</noscript>
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400&display=swap"
-		as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'">
-
-	<link rel="icon" type="image/png" href="img/logo.webp">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/icons/logo.webp">
 </head>
 
 <body>
 	<!-- Header -->
-	<header>
-		<nav class="header-content">
-			<div class="header-left-nav">
-				<div class="header-left">
-					<img src="img/logo.webp" width="42" height="42" alt="Logo de Antony Calvo" title="AntonyCalv Logo"
-						loading="lazy" />
+	<header id="header" class="header">
+		<div class="header-content container">
+			<a href="#" class="nav-logo" title="Principio">
+				<img src="images/icons/logo.webp" alt="Logo" width="32" height="32">
+				<span>Antony Portafolio</span>
+			</a>
+
+			<nav id="navMenu" class="navigation-content" role="navigation">
+				<div class="nav-links">
+					<a href="#home" class="nav-link">Principio</a>
+					<a href="#technologies" class="nav-link">Tecnologías</a>
+					<a href="#projects" class="nav-link">Proyectos</a>
+					<a href="#contact" class="nav-link">Contacto</a>
 				</div>
-				<div class="header-nav">
-					<a href="#explore">
-						<i class="ri-earth-line"></i> Explorar
-					</a>
-					<a href="#projects">
-						<i class="ri-layout-grid-line"></i> Proyectos
-					</a>
-					<a href="#technologys">
-						<i class="ri-code-line"></i> Tecnologías
-					</a>
-					<a href="#about">
-						<i class="ri-information-2-line"></i> Acerca de
-					</a>
-					<a href="#contact">
-						<i class="ri-mail-line"></i> Contacto
-					</a>
-				</div>
-			</div>
-			<div class="header-right">
-				<button id="themeButton" class="header-link theme-toggle" title="Cambiar tema">
-					<i class="ri-sun-line light-icon"></i>
-					<i class="ri-moon-line dark-icon"></i>
-				</button>
-				<a href="#" class="header-link github" title="GitHub">
+			</nav>
+
+			<div class="nav-buttons-social">
+				<a href="https://github.com/AntonyPss" class="menu-item" title="GitHub" target="_blank">
 					<i class="ri-github-fill"></i>
-					<span>GitHub</span>
 				</a>
-				<a href="javascript:void(0)" onclick="menuButton()" class="header-link menu" title="Menú">
-					<i class="ri-menu-fill"></i>
+				<a href="https://discord.com/users/antony_xd" class="menu-item" title="Discord" target="_blank">
+					<i class="ri-discord-fill"></i>
 				</a>
 			</div>
-		</nav>
+
+			<div class="menu-icon" id="menuToggle">
+				<i class="ri-menu-line"></i>
+			</div>
+		</div>
 	</header>
 
-	<main>
-		<!-- Sección Personal -->
-		<section id="explore" class="personal-info-container">
-			<div class="personal-info">
-				<div class="about">
-					<h1 class="name">Antony Calvo</h1>
-					<h2 class="rol">Desarrollador Web</h2>
-					<p class="info">Hola, soy Antony, un apasionado desarrollador web con experiencia en HTML, CSS y
-						JavaScript. Me especializo en crear interfaces modernas, responsivas y accesibles. Disfruto
-						aprendiendo nuevas tecnologías y enfrentando desafíos creativos.</p>
-					<div class="cta-buttons">
-						<a href="#projects" class="btn btn-primary">Ver mis proyectos</a>
-						<a href="#contact" class="btn btn-secondary">Contáctame</a>
-					</div>
+	<!-- Main Content -->
+	<main id="home" class="main" role="main" aria-label="Principio">
+		<!-- Hero Section -->
+		<div id="hero-content" class="hero-content container fade-anim">
+			<div class="hero-labels">
+				<h1>Hola, soy Antony Calvo</h1>
+				<p>Apasionado desarrollador web con experiencia en HTML, CSS y JavaScript. Me especializo en crear
+					interfaces modernas, responsivas y accesibles. Disfruto aprendiendo nuevas tecnologías y enfrentando
+					desafíos creativos.</p>
+				<div class="hero-buttons">
+					<a href="#projects" class="btn-primary" title="Proyectos">Ver mis proyectos</a>
+					<a href="#contact" class="btn-secondary" title="Contacto">Contáctame</a>
 				</div>
-				<div class="profile">
-					<img src="img/profile.webp" alt="Antony Calvo" title="AntonyCalv Photo"
-						loading="lazy" />
-				</div>
+			</div>
+
+			<div class="hero-image">
+				<img src="images/icons/profile.webp" alt="Perfil">
+			</div>
+		</div>
+
+		<!-- Technologies Section -->
+		<div id="technologies" class="tech section container fade-anim" aria-label="Tecnologías">
+			<h2 class="section-title">Tecnologías</h2>
+			<p class="section-info">Lenguajes y herramientas que domino</p>
+			<div id="tech-list" class="section-grid">
+				<!-- Technologies items will be dynamically inserted here -->
+			</div>
+		</div>
+
+		<!-- Projects Section -->
+		<section id="projects" class="projects section container fade-anim" aria-label="Proyectos">
+			<h2 class="section-title">Proyectos</h2>
+			<p class="section-info">Algunos de mis trabajos recientes</p>
+			<div id="projects-grid" class="section-grid">
+				<!-- Project cards will be dynamically inserted here -->
 			</div>
 		</section>
 
-		<!-- Tecnologías -->
-		<section id="technologys" class="languages">
-			<div class="label-div">
-				<div class="icon-wrapper">
-					<i class="ri-code-line icon" title="Tecnologías"></i>
-				</div>
-				<h2 class="title">Tecnologías</h2>
-				<p class="subtitle">Lenguajes y herramientas que domino</p>
-			</div>
-			<div class="languages-grid">
-				<div class="tech-card">
-					<div class="tech-icon" style="color: #E34F26;">
-						<i class="ri-html5-fill"></i>
-					</div>
-					<div class="tech-info">
-						<h3>HTML5</h3>
-						<div class="tech-progress">
-							<div class="progress-bar" style="width: 30%"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tech-card">
-					<div class="tech-icon" style="color: #1572B6;">
-						<i class="ri-css3-fill"></i>
-					</div>
-					<div class="tech-info">
-						<h3>CSS3</h3>
-						<div class="tech-progress">
-							<div class="progress-bar" style="width: 24%"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tech-card">
-					<div class="tech-icon" style="color: #F7DF1E;">
-						<i class="ri-javascript-fill"></i>
-					</div>
-					<div class="tech-info">
-						<h3>JavaScript</h3>
-						<div class="tech-progress">
-							<div class="progress-bar" style="width: 10%"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tech-card">
-					<div class="tech-icon" style="color: #8CC84B;">
-						<i class="ri-nodejs-fill"></i>
-					</div>
-					<div class="tech-info">
-						<h3>Node.js</h3>
-						<div class="tech-progress">
-							<div class="progress-bar" style="width: 20%"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tech-card">
-					<div class="tech-icon" style="color: #007ACC;">
-						<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<title>VSCode</title>
-							<path
-								d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" />
-						</svg>
-					</div>
-					<div class="tech-info">
-						<h3>VSCode</h3>
-						<div class="tech-progress">
-							<div class="progress-bar" style="width: 70%"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Proyectos -->
-		<section id="projects" class="projects">
-			<div class="label-div">
-				<div class="icon-wrapper">
-					<i class="ri-layout-grid-line icon" title="Proyectos"></i>
-				</div>
-				<h2 class="title">Proyectos Destacados</h2>
-				<p class="subtitle">Algunos de mis trabajos recientes</p>
-			</div>
-			<div class="projects-grid">
-				<article class="project-card">
-					<div class="project-image">
-						<img src="img/projects/weather-app.webp" alt="Weather App" loading="lazy">
-						<div class="project-tags">
-							<span>HTML/CSS</span>
-							<span>JavaScript</span>
-							<span>API</span>
-						</div>
-					</div>
-					<div class="project-content">
-						<h3>Weather Web App</h3>
-						<p>Aplicación web para consultar el clima en tiempo real usando la API de OpenWeather.</p>
-						<div class="project-links">
-							<a href="#" class="demo-link">Ver Demo</a>
-							<a href="#" class="code-link">Código</a>
-						</div>
-					</div>
-				</article>
-				<article class="project-card">
-					<div class="project-image">
-						<img src="img/projects/tic-tac-toe.webp" alt="Tres en Raya" loading="lazy">
-						<div class="project-tags">
-							<span>JavaScript</span>
-							<span>Juego</span>
-						</div>
-					</div>
-					<div class="project-content">
-						<h3>Tres en Raya</h3>
-						<p>Juego clásico de tres en raya con inteligencia artificial básica.</p>
-						<div class="project-links">
-							<a href="#" class="demo-link">Ver Demo</a>
-							<a href="#" class="code-link">Código</a>
-						</div>
-					</div>
-				</article>
-			</div>
-		</section>
-
-		<!-- Acerca de -->
-		<section id="about" class="about-section">
-			<div class="label-div">
-				<div class="icon-wrapper">
-					<i class="ri-user-3-line icon"></i>
-				</div>
-				<h2 class="title">Mi Historia</h2>
-				<p class="subtitle">Más sobre mi camino en la programación</p>
-			</div>
-
-			<div class="timeline">
-				<div class="timeline-item">
-					<div class="timeline-date">2022</div>
-					<div class="timeline-content">
-						<h3>Primeros pasos en programación</h3>
-						<p>Empecé a aprender HTML y CSS por mi cuenta, creando pequeñas páginas web estáticas.</p>
-					</div>
-				</div>
-
-				<div class="timeline-item">
-					<div class="timeline-date">2023</div>
-					<div class="timeline-content">
-						<h3>Descubrimiento de JavaScript</h3>
-						<p>Me resulta muy difícil aprender JavaScript, pero sigo esforzándome por mejorar cada día.</p>
-					</div>
-				</div>
-
-				<div class="timeline-item">
-					<div class="timeline-date">2024</div>
-					<div class="timeline-content">
-						<h3>Desarrollo de proyectos personales</h3>
-						<p>Construí web sencillas y seguí practicando conceptos básicos, dando mis primeros pasos como principiante.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Contacto -->
-		<section id="contact" class="contact">
-			<div class="label-div">
-				<div class="icon-wrapper">
-					<i class="ri-mail-line icon" title="Contacto"></i>
-				</div>
-				<h2 class="title">Contacto</h2>
-				<p class="subtitle">¿Tienes alguna pregunta o propuesta? ¡No dudes en contactarme!</p>
-			</div>
-			<div class="contact-info">
-				<a href="mailto:ROVALOSKI@gmail.com" target="_blank">
-					<i class="ri-mail-fill"></i> ROVALOSKI@gmail.com
+		<!-- Contact Section -->
+		<section id="contact" class="contact section container fade-anim" aria-label="Contact Section">
+			<h2 class="section-title">Contáctame</h2>
+			<p class="section-info">¿Tienes alguna pregunta o propuesta? ¡No dudes en contactarme!</p>
+			<div class="contact-buttons">
+				<!-- Email Button -->
+				<a href="mailto:ROVALOSKI@gmail.com" class="btn-secondary" title="Email">
+					<i class="ri-mail-fill"></i> Correo
 				</a>
-				<a href="https://github.com/AntonyPss" target="_blank">
-					<i class="ri-github-fill"></i> AntonyPss
+
+				<!-- GitHub Button -->
+				<a href="https://github.com/AntonyPss/Antony-Projects" class="btn-secondary" title="GitHub Profile"
+					target="_blank">
+					<i class="ri-github-fill"></i> GitHub
 				</a>
-				<a href="https://x.com/AntonyPss" target="_blank">
-					<i class="ri-twitter-fill"></i> @AntonyPss
-				</a>
-				<a href="https://www.linkedin.com/in/antony-calvo-451465262/" target="_blank">
-					<i class="ri-linkedin-fill"></i> Antony Calvo
+
+				<!-- Discord Button -->
+				<a href="https://discord.gg/kYDf4gadKw" class="btn-secondary" title="Discord" target="_blank">
+					<i class="ri-discord-fill"></i> Discord
 				</a>
 			</div>
 		</section>
 	</main>
 
-	<!-- Footer -->
-	<footer>
-		<div class="footer-content">
-			<div class="footer-brand">
-				<img src="img/logo.webp" alt="Antony Calvo" width="50" loading="lazy">
-				<h3>Antony Calvo</h3>
-				<p>Estudiante de Desarrollo Web Frontend</p>
-			</div>
+	<!-- Neko Image Hover -->
+	<div class="neko-container">
+		<span class="neko-trigger">Neko Arc Here!</span>
+		<img src="images/icons/neko.jpg" alt="Neko" class="neko-float" id="neko-img">
+	</div>
 
-			<div class="footer-links">
-				<h4>Enlaces Rápidos</h4>
-				<ul>
-					<li><a href="#explore">Inicio</a></li>
-					<li><a href="#projects">Proyectos</a></li>
-					<li><a href="#technologys">Tecnologías</a></li>
-					<li><a href="#contact">Contacto</a></li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="footer-bottom">
-			<p>&copy; 2025 Antony Calvo. Todos los derechos reservados.</p>
-			<div class="social-links">
-				<a href="https://github.com/AntonyPss" target="_blank" aria-label="GitHub"><i
-						class="ri-github-fill"></i></a>
-				<a href="https://www.linkedin.com/in/antony-calvo-451465262/" target="_blank" aria-label="LinkedIn"><i
-						class="ri-linkedin-fill"></i></a>
-				<a href="https://x.com/AntonyPss" target="_blank" aria-label="Twitter"><i
-						class="ri-twitter-fill"></i></a>
-				<a href="mailto:ROVALOSKI@gmail.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
-			</div>
+	<!-- Footer Section -->
+	<footer id="footer" class="footer" role="contentinfo" aria-label="Footer">
+		<div class="info">
+			<p>&copy; 2025 Antony Community. All rights reserved.</p>
+			<p>Made with ❤️ by Antony</p>
 		</div>
 	</footer>
 

@@ -1,71 +1,257 @@
-// Función para el menú
-function menuButton() {
-    const navMenu = document.querySelector(".header-nav");
-    const menuBtn = document.querySelector(".menu");
+// Menu Hide Header
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const menuIcon = menuToggle.querySelector("i");
 
+menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
-    menuBtn.classList.toggle("active");
-}
 
-// Función para el tema claro/oscuro
+    if (navMenu.classList.contains("active")) {
+        menuIcon.classList.replace("ri-menu-line", "ri-close-line");
+    } else {
+        menuIcon.classList.replace("ri-close-line", "ri-menu-line");
+    }
+});
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        menuIcon.classList.replace("ri-close-line", "ri-menu-line");
+    });
+});
+
+// Header Scroll Effect
+window.addEventListener("scroll", function () {
+    const header = document.getElementById("header");
+
+    if (window.scrollY > 20) {
+        header.classList.add("header-scrolled");
+    } else {
+        header.classList.remove("header-scrolled");
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-    const themeButton = document.getElementById("themeButton");
+    // Neko Image Cursor
+    const trigger = document.querySelector(".neko-trigger");
+    const nekoImg = document.getElementById("neko-img");
 
-    // Verificar ajustes guardados
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    document.body.classList.toggle("light-theme", savedTheme === "light");
-
-    themeButton.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        const currentTheme = document.body.classList.contains("light-theme")
-            ? "light"
-            : "dark";
-        localStorage.setItem("theme", currentTheme);
+    trigger.addEventListener("mouseenter", () => {
+        nekoImg.classList.add("is-visible");
     });
 
-    // Smooth scrolling para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
+    trigger.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
 
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: "smooth",
-                });
-
-                // Cerrar menú móvil si está abierto
-                const navMenu = document.querySelector(".header-nav");
-                const menuBtn = document.querySelector(".menu");
-                if (navMenu.classList.contains("active")) {
-                    navMenu.classList.remove("active");
-                    menuBtn.classList.remove("active");
-                }
-            }
-        });
+        nekoImg.style.left = `${x - 40}px`;
+        nekoImg.style.top = `${y - 90}px`;
     });
 
-    // Animación de elementos al hacer scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll(
-            ".personal-info, .languages, .projects-grid, .about-section, .contact"
-        );
+    trigger.addEventListener("mouseleave", () => {
+        nekoImg.classList.remove("is-visible");
+    });
 
-        elements.forEach((element) => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (elementPosition < windowHeight - 100) {
-                element.style.opacity = "1";
-                element.style.transform = "translateY(0)";
-            }
-        });
+    // HTML Anims
+    const observerOptions = {
+        threshold: 0.2,
     };
 
-    // Ejecutar al cargar y al hacer scroll
-    window.addEventListener("load", animateOnScroll);
-    window.addEventListener("scroll", animateOnScroll);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            }
+        });
+    }, observerOptions);
+
+    const sections = ["technologies", "projects", "contact"];
+    sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+
+    setTimeout(() => {
+        document.getElementById("hero-content").classList.add("is-visible");
+    }, 100);
+
+    // Web Preview Content
+    const previewItems = [
+        {
+            cover: "images/projects/tic-tac-toe.webp",
+            title: "Tic Tac Toe",
+            message: "Funcional",
+            page: "#",
+            date: "Undefined",
+        },
+        {
+            cover: "images/projects/weather-app.webp",
+            title: "Weather App",
+            message: "Funcional",
+            page: "#",
+            date: "Undefined",
+        },
+        {
+            cover: "https://placehold.co/100x100?text=No+Icon",
+            title: "Antony Community",
+            message: "Funcional",
+            page: "https://antonypss.github.io/Antony-Projects/",
+            date: "Undefined",
+        },
+        {
+            cover: "https://placehold.co/100x100?text=No+Icon",
+            title: "Lonely Lonely, I Guess",
+            message: "Funcional",
+            page: "https://lonely-dance.vercel.app/",
+            date: "Undefined",
+        },
+        {
+            cover: "https://placehold.co/100x100?text=No+Icon",
+            title: "Página de gatos",
+            message: "Funcional",
+            page: "https://cat-page-antonypss.vercel.app/",
+            date: "Undefined",
+        },
+    ];
+
+    const previewList = document.getElementById("projects-grid");
+    if (!previewList) {
+        console.error("Element with id 'projects-grid' not found!");
+        return;
+    }
+
+    // Use a DocumentFragment for better performance when appending multiple nodes
+    const fragment = document.createDocumentFragment();
+    previewItems.forEach((item) => {
+        // Main Div
+        const card = document.createElement("div");
+        card.className = "project-card";
+
+        // Image Cover
+        const img = document.createElement("img");
+        img.src = item.cover;
+        img.alt = item.title;
+        img.className = "project-image";
+        card.appendChild(img);
+
+        // Title and Tag Container
+        const titleTagContainer = document.createElement("div");
+        titleTagContainer.className = "title-tag-container";
+
+        // Title
+        const title = document.createElement("h3");
+        title.className = "project-title";
+        title.textContent = item.title;
+        titleTagContainer.appendChild(title);
+
+        // Tag
+        const tag = document.createElement("span");
+        tag.className = "project-tag";
+        tag.textContent = item.tag || "Undefined";
+        titleTagContainer.appendChild(tag);
+
+        // Append the container to the card
+        card.appendChild(titleTagContainer);
+
+        // Description
+        const description = document.createElement("p");
+        description.className = "project-description";
+        description.textContent = item.message;
+        card.appendChild(description);
+
+        // Footer
+        const footer = document.createElement("div");
+        footer.className = "card-footer";
+
+        // Link Button
+        const link = document.createElement("a");
+        link.href = item.page;
+        link.className = "project-link btn-secondary";
+        link.title = `Ver ${item.title}`;
+        link.textContent = "Ver proyecto";
+        footer.appendChild(link);
+
+        // Date Tag
+        const dateTag = document.createElement("div");
+        dateTag.className = "card-date-tag";
+
+        const dateIcon = document.createElement("i");
+        dateIcon.className = "ri-calendar-fill";
+
+        const dateSpan = document.createElement("span");
+        dateSpan.textContent = item.date;
+
+        dateTag.appendChild(dateIcon);
+        dateTag.appendChild(dateSpan);
+        footer.appendChild(dateTag);
+
+        // All together
+        card.appendChild(footer);
+        fragment.appendChild(card);
+
+        return fragment;
+    });
+
+    previewList.appendChild(fragment);
 });
+
+// Tech
+const technologies = [
+    { name: "HTML5", level: "Básico", icon: "ri-html5-fill", color: "#E34F26" },
+    { name: "CSS3", level: "Básico", icon: "ri-css3-fill", color: "#1572B6" },
+    {
+        name: "JavaScript",
+        level: "Principiante",
+        icon: "ri-javascript-fill",
+        color: "#F7DF1E",
+    },
+    {
+        name: "NodeJS",
+        level: "Principiante",
+        icon: "ri-nodejs-fill",
+        color: "#8CC84B",
+    },
+];
+
+function renderTechList() {
+    const container = document.getElementById("tech-list");
+    if (!container) return;
+
+    const fragment = document.createDocumentFragment();
+
+    technologies.forEach((tech) => {
+        const techCard = document.createElement("div");
+        techCard.className = "tech-card";
+
+        // 1. Icono de la tecnología
+        const icon = document.createElement("i");
+        icon.className = `${tech.icon} tech-icon`;
+        icon.style.color = tech.color;
+
+        // 2. Contenedor de información (Nombre + Nivel)
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "tech-info";
+
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "tech-name";
+        nameSpan.textContent = tech.name;
+
+        const levelSpan = document.createElement("span");
+        levelSpan.className = "tech-level";
+        levelSpan.textContent = tech.level;
+
+        // Armado de la estructura
+        infoDiv.appendChild(nameSpan);
+        infoDiv.appendChild(levelSpan);
+
+        techCard.appendChild(icon);
+        techCard.appendChild(infoDiv);
+
+        fragment.appendChild(techCard);
+    });
+
+    container.innerHTML = "";
+    container.appendChild(fragment);
+}
+
+document.addEventListener("DOMContentLoaded", renderTechList);

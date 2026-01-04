@@ -13,13 +13,6 @@ Este portafolio está construido con:
 -   **HTML5** ⚡
 -   **CSS3** 🎨
 -   **JavaScript** 🧠
--   **Json** 📦
-
-## 📂 Proyectos Destacados
-
-🔹 **Tres en Raya** – Un juego de estrategia con lógica mejorada.  
-🔹 **Weather API** – Aplicación interactiva que muestra datos meteorológicos en tiempo real.  
-🔹 **Amplificador de Audio** – Amplificador de Audio Portátil.
 
 ## 🚀 Cómo explorar
 
@@ -34,4 +27,4 @@ Si deseas conectar conmigo, puedes encontrarme en:
 
 ---
 
-✏️ _Desarrollado con pasión por Antony. Todos los derechos reservados © 2025_
+✏️ _Desarrollado con pasión por Antony. Todos los derechos reservados © 2026_
