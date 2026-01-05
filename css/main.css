@@ -28,7 +28,7 @@
 	--color-surface: #1C1F1C;
 
 	/* --- Transitions --- */
-	--transition-all: 0.3s ease;
+	--transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -98,13 +98,13 @@ html {
 .header {
 	position: sticky;
 	top: 0;
-	width: 100%;
-	height: auto;
 	left: 0;
 	width: 100%;
 	transition: var(--transition-all);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	z-index: 1000;
+	background-color: var(--color-surface);
 }
 
 .header-content {
@@ -251,7 +251,6 @@ html {
 	display: flex;
 	align-items: center;
 	gap: 20px;
-	width: 900px;
 }
 
 .hero-labels h1 {
@@ -563,4 +562,95 @@ html {
 .fade-anim.is-visible {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0 10px;
+	}
+
+	.section-title {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.section-info {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-content {
+		flex-direction: column-reverse;
+		text-align: center;
+		gap: 30px;
+	}
+
+	.hero-labels h1 {
+		font-size: 1.8rem;
+	}
+
+	.hero-buttons {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.hero-buttons a {
+		width: 100%;
+	}
+
+	.hero-image img {
+		max-width: 160px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 768px) {
+	#tech-list {
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		width: 100%;
+		gap: 12px;
+	}
+
+	.tech-card {
+		padding: 12px;
+		gap: 10px;
+	}
+
+	.tech-icon {
+		font-size: 1.8rem;
+	}
+
+	.section-grid {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+
+	.project-card .project-image {
+		height: 200px;
+	}
+}
+
+@media (max-width: 768px) {
+	.header-content {
+		padding: 10px 15px;
+	}
+
+	.nav-buttons-social {
+		display: none;
+	}
+
+	.navigation-content {
+		background-color: var(--color-surface);
+		border-bottom: 1px solid var(--primary-dark);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.nav-link {
+		background-color: transparent;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		padding: 20px;
+		font-size: 1.1rem;
+	}
 }

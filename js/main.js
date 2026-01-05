@@ -79,38 +79,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewItems = [
         {
             cover: "images/projects/tic-tac-toe.webp",
-            title: "Tic Tac Toe",
-            message: "Funcional",
+            title: "Tic-Tac-Toe",
+            message:
+                "El clásico juego de estrategia reinventado con lógica de programación pura y un sistema de victoria impecable para dos jugadores.",
             page: "#",
-            date: "Undefined",
+            date: "13 de Abril, 2025",
+            tag: "HTML/CSS/JS",
         },
         {
             cover: "images/projects/weather-app.webp",
-            title: "Weather App",
-            message: "Funcional",
+            title: "SkyCast UI",
+            message:
+                "Consulta el estado del tiempo en tiempo real. Diseño limpio centrado en la legibilidad y el uso de APIs meteorológicas externas.",
             page: "#",
-            date: "Undefined",
+            date: "20 de Noviembre, 2025",
+            tag: "HTML/CSS/JS",
         },
         {
             cover: "https://placehold.co/100x100?text=No+Icon",
             title: "Antony Community",
-            message: "Funcional",
+            message:
+                "El punto de encuentro para mi comunidad. Mira mis proyectos relacionados al mundo de los bloques.",
             page: "https://antonypss.github.io/Antony-Projects/",
-            date: "Undefined",
+            date: "4 de Enero, 2025",
+            tag: "HTML/CSS/JS",
         },
         {
             cover: "https://placehold.co/100x100?text=No+Icon",
-            title: "Lonely Lonely, I Guess",
-            message: "Funcional",
+            title: "Lonely Vibes",
+            message:
+                "Una experiencia visual y sonora basada en el popular meme. Diseño minimalista con animaciones sincronizadas.",
             page: "https://lonely-dance.vercel.app/",
-            date: "Undefined",
+            date: "12 de Noviembre, 2025",
+            tag: "HTML/CSS/JS",
         },
         {
             cover: "https://placehold.co/100x100?text=No+Icon",
-            title: "Página de gatos",
-            message: "Funcional",
+            title: "Cat Explorer",
+            message:
+                "Un rincón interactivo para los amantes de los felinos. Galería dinámica con datos curiosos y una interfaz suave diseñada para el relax.",
             page: "https://cat-page-antonypss.vercel.app/",
-            date: "Undefined",
+            date: "18 de Octubre, 2025",
+            tag: "HTML/CSS/JS",
         },
     ];
 
