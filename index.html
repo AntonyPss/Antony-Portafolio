@@ -12,7 +12,7 @@
 	<meta property="og:title" content="Portafolio de Antony Calvo - Desarrollador Web">
 	<meta property="og:description"
 		content="Portafolio profesional de Antony Calvo, desarrollador web apasionado por la tecnología.">
-	<meta property="og:image" content="img/profile.webp">
+	<meta property="og:image" content="images/icons/profile.webp">
 	<meta property="og:url" content="https://antony-portafolio.vercel.app/">
 	<meta name="twitter:card" content="summary_large_image">
 
@@ -28,19 +28,23 @@
 		<div class="header-content container">
 			<a href="#" class="nav-logo" title="Principio">
 				<img src="images/icons/logo.webp" alt="Logo" width="32" height="32">
-				<span>Antony Portafolio</span>
+				<span>Antony Labs</span>
 			</a>
 
 			<nav id="navMenu" class="navigation-content" role="navigation">
 				<div class="nav-links">
-					<a href="#home" class="nav-link">Principio</a>
+					<a href="#home" class="nav-link">Inicio</a>
 					<a href="#technologies" class="nav-link">Tecnologías</a>
 					<a href="#projects" class="nav-link">Proyectos</a>
+					<a href="#donations" class="nav-link">Donaciones</a>
 					<a href="#contact" class="nav-link">Contacto</a>
 				</div>
 			</nav>
 
 			<div class="nav-buttons-social">
+				<button id="themeToggle" class="menu-item" title="Cambiar Tema" aria-label="Cambiar Tema" style="background: transparent; cursor: pointer;">
+					<i class="ri-moon-line"></i>
+				</button>
 				<a href="https://github.com/AntonyPss" class="menu-item" title="GitHub" target="_blank">
 					<i class="ri-github-fill"></i>
 				</a>
@@ -58,76 +62,108 @@
 	<!-- Main Content -->
 	<main id="home" class="main" role="main" aria-label="Principio">
 		<!-- Hero Section -->
-		<div id="hero-content" class="hero-content container fade-anim">
-			<div class="hero-labels">
-				<h1>Hola, soy Antony Calvo</h1>
-				<p>Apasionado desarrollador web con experiencia en HTML, CSS y JavaScript. Me especializo en crear
-					interfaces modernas, responsivas y accesibles. Disfruto aprendiendo nuevas tecnologías y enfrentando
-					desafíos creativos.</p>
-				<div class="hero-buttons">
-					<a href="#projects" class="btn-primary" title="Proyectos">Ver mis proyectos</a>
-					<a href="#contact" class="btn-secondary" title="Contacto">Contáctame</a>
+		<section class="container">
+			<div id="hero-content" class="hero-content fade-anim">
+				<div class="hero-labels">
+					<h1>Hola, soy Antony Calvo</h1>
+					<p>Apasionado desarrollador web con experiencia en HTML, CSS y JavaScript. Me especializo en crear
+						interfaces modernas, responsivas y altamente interactivas. Disfruto construyendo experiencias digitales pulidas y funcionales.</p>
+					<div class="hero-buttons">
+						<a href="#projects" class="btn-primary" title="Proyectos">Ver mis proyectos <i class="ri-arrow-right-line"></i></a>
+						<a href="#contact" class="btn-secondary" title="Contacto">Contáctame</a>
+					</div>
+				</div>
+
+				<div class="hero-image">
+					<img src="images/icons/profile.webp" alt="Perfil de Antony Calvo">
 				</div>
 			</div>
-
-			<div class="hero-image">
-				<img src="images/icons/profile.webp" alt="Perfil">
-			</div>
-		</div>
+		</section>
 
 		<!-- Technologies Section -->
-		<div id="technologies" class="tech section container fade-anim" aria-label="Tecnologías">
+		<section id="technologies" class="tech section container fade-anim" aria-label="Tecnologías">
 			<h2 class="section-title">Tecnologías</h2>
-			<p class="section-info">Lenguajes y herramientas que domino</p>
+			<p class="section-info">Lenguajes y herramientas que utilizo para crear soluciones</p>
 			<div id="tech-list" class="section-grid">
-				<!-- Technologies items will be dynamically inserted here -->
+				<!-- Technologies items will be dynamically inserted here by JavaScript -->
 			</div>
-		</div>
+		</section>
 
 		<!-- Projects Section -->
 		<section id="projects" class="projects section container fade-anim" aria-label="Proyectos">
-			<h2 class="section-title">Proyectos</h2>
-			<p class="section-info">Algunos de mis trabajos recientes</p>
+			<h2 class="section-title">Proyectos Destacados</h2>
+			<p class="section-info">Una muestra seleccionada de mis últimos trabajos</p>
 			<div id="projects-grid" class="section-grid">
-				<!-- Project cards will be dynamically inserted here -->
+				<!-- Project cards will be dynamically inserted here by JavaScript -->
+			</div>
+		</section>
+
+		<!-- Donations Section -->
+		<section id="donations" class="donations section container fade-anim" aria-label="Sección de Donaciones">
+			<h2 class="section-title">Apoya mi Trabajo</h2>
+			<p class="section-info">Si valoras mis proyectos y te gustaría contribuir a su desarrollo continuo</p>
+			
+			<div class="section-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); max-width: 700px; margin: 0 auto;">
+				<!-- Ko-fi card -->
+				<div class="project-card">
+					<div class="project-card-body" style="align-items: center; text-align: center; gap: 12px; justify-content: center; height: 100%;">
+						<div style="font-size: 2.2rem; color: #FF5E5B;"><i class="ri-cup-line"></i></div>
+						<h3 class="project-title">Ko-fi</h3>
+						<p class="project-description">Cómprame un café o haz una donación única sin comisiones de forma directa.</p>
+						<a href="https://ko-fi.com/imantonycalv" target="_blank" class="btn-primary" style="margin-top: 8px; width: 100%;">Donar en Ko-fi</a>
+					</div>
+				</div>
+
+				<!-- PayPal card -->
+				<div class="project-card">
+					<div class="project-card-body" style="align-items: center; text-align: center; gap: 12px; justify-content: center; height: 100%;">
+						<div style="font-size: 2.2rem; color: #00457C;"><i class="ri-paypal-line"></i></div>
+						<h3 class="project-title">PayPal</h3>
+						<p class="project-description">Envía una contribución rápida y segura a través de una transferencia directa.</p>
+						<a href="https://www.paypal.com/donate/?hosted_button_id=G6YTUVADEKDFE" target="_blank" class="btn-secondary" style="margin-top: 8px; width: 100%;">Donar vía PayPal</a>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<!-- Contact Section -->
-		<section id="contact" class="contact section container fade-anim" aria-label="Contact Section">
-			<h2 class="section-title">Contáctame</h2>
-			<p class="section-info">¿Tienes alguna pregunta o propuesta? ¡No dudes en contactarme!</p>
-			<div class="contact-buttons">
-				<!-- Email Button -->
-				<a href="mailto:ROVALOSKI@gmail.com" class="btn-secondary" title="Email">
-					<i class="ri-mail-fill"></i> Correo
-				</a>
+		<section id="contact" class="contact section container fade-anim" aria-label="Sección de Contacto">
+			<div class="contact-card">
+				<h2 class="section-title">¿Hablamos?</h2>
+				<p>¿Tienes alguna propuesta o te interesa colaborar en un proyecto? Ponte en contacto conmigo a través de cualquiera de mis redes.</p>
+				
+				<div class="contact-buttons">
+					<!-- Email Button -->
+					<a href="mailto:ROVALOSKI@gmail.com" class="btn-primary" title="Enviar Email">
+						<i class="ri-mail-line"></i> Enviar Correo
+					</a>
 
-				<!-- GitHub Button -->
-				<a href="https://github.com/AntonyPss/Antony-Portafolio" class="btn-secondary" title="GitHub Profile"
-					target="_blank">
-					<i class="ri-github-fill"></i> GitHub
-				</a>
+					<!-- GitHub Button -->
+					<a href="https://github.com/AntonyPss/Antony-Portafolio" class="btn-secondary" title="Perfil de GitHub"
+						target="_blank">
+						<i class="ri-github-line"></i> GitHub
+					</a>
 
-				<!-- Discord Button -->
-				<a href="https://discord.gg/kYDf4gadKw" class="btn-secondary" title="Discord" target="_blank">
-					<i class="ri-discord-fill"></i> Discord
-				</a>
+					<!-- Discord Button -->
+					<a href="https://discord.gg/kYDf4gadKw" class="btn-secondary" title="Servidor de Discord" target="_blank">
+						<i class="ri-discord-line"></i> Discord
+					</a>
+				</div>
 			</div>
 		</section>
-	</main>
 
-	<!-- Neko Image Hover -->
-	<div class="neko-container">
-		<span class="neko-trigger">Neko Arc Here!</span>
-		<img src="images/icons/neko.jpg" alt="Neko" class="neko-float" id="neko-img">
-	</div>
+		<!-- Neko Image Easter Egg -->
+		<div class="neko-container container">
+			<span class="neko-trigger">¡Neko Arc está acechando!</span>
+			<img src="images/icons/neko.jpg" alt="Neko" class="neko-float" id="neko-img">
+		</div>
+	</main>
 
 	<!-- Footer Section -->
 	<footer id="footer" class="footer" role="contentinfo" aria-label="Footer">
-		<div class="info">
-			<p>&copy; 2026 Antony Community. All rights reserved.</p>
-			<p>Made with ❤️ by Antony</p>
+		<div class="container info">
+			<p>&copy; 2026 Antony Community. Todos los derechos reservados.</p>
+			<p>Creado con ❤️ y dedicación por Antony</p>
 		</div>
 	</footer>
 
